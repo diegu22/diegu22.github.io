@@ -62,7 +62,8 @@ header img:hover {
     padding:5px; 
     width:100%;
     margin:5px 0;
-    background-color: #6675FF;	
+    background-color: #6675FF;
+	box-sizing: border-box;
 }
 .alldiv {
     display:table;
