@@ -1,0 +1,370 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Am I go car?</title>
+	    <link id="styleslink" rel="stylesheet" href="styles.css">
+        <link id="styleslink" rel="stylesheet" href="styles2.css">
+        <link id="styleslink" rel="stylesheet" href="calander.css">
+		
+     <link href="https://fonts.googleapis.com/css?family=Biryani|Karla|Montserrat&display=swap" rel="stylesheet">
+	  <link rel="scortcut icon" href="https://i.imgur.com/JuRdafa.png" >
+	</head>
+	<body onload="rideplan()">
+   <div id="content">
+      <header id="header">
+         <div class="name">
+         <p>Amigocar</p>
+            </div>
+            <img src="menu2.png" class="menuicon" onclick="menuClick()">     
+               </header>
+
+            <div id="menu">
+               <ul>
+			   <a href="index.html">
+                     <li class="text">
+                        Home
+                     </li>
+                  </a>
+                 
+                  <!--<a href=".html">
+                    <li class="text">
+                        Drives
+                    </li>
+                  </a>
+                  <a href=".html">
+                    <li class="text">
+                        Cities
+                    </li>
+                  </a>-->
+                  <a href="us.html">
+                    <li class="text">
+                       About us
+                    </li>
+                  </a>
+              </ul>
+            </div>
+       
+        <div class="phototext">
+         <div class="phototextcontent">
+         <ul class="textul">
+               <li class="textli">
+                  <div class="text2">
+                     <h1>Trip planner</h1>
+                     <p>Plan your trip here!</p>
+                  </div>
+            </li>
+         </ul>
+         <ul class="photoul">
+            <li>
+               <img src="https://i.imgur.com/eDFa22c.jpg" alt="Trip planning.">
+            </li>
+         </ul>
+      </div> 
+            
+<table id="estmap_table">
+    <tr>      
+        <th>
+            <img src="ee-04.gif" usemap="#image-map" id="estmap">
+                <map name="image-map" >
+    <area target="" alt="harjumaa" title="harjumaa" onclick="harjumaa()" coords="248,159,257,171,272,181,287,181,296,191,297,197,292,212,305,207,316,205,326,192,348,189,357,163,384,160,399,181,418,191,422,204,431,210,444,208,446,193,455,190,452,181,456,156,472,152,506,149,502,121,497,109,493,90,496,80,481,58,479,83,455,61,461,87,448,91,448,101,412,89,412,96,399,93,388,96,376,83,377,100,370,108,359,101,356,111,345,107,340,109,328,103,320,105,319,117,304,119,308,129,290,123,284,129,293,143,291,152,284,146,270,149,251,149" shape="poly">
+    <area target="" alt="läänemaa" title="läänemaa" onclick="läänemaa()" coords="241,155,257,171,273,183,285,181,293,212,293,221,305,247,298,251,299,259,289,268,300,272,297,279,283,287,274,297,265,295,271,311,235,313,231,306,225,309,226,300,223,283,231,278,259,263,217,263,229,251,216,234,227,224,239,216,235,208,229,214,213,208,222,194,225,178,221,164" shape="poly">
+    <area target="" alt="pärnumaa" title="pärnumaa" onclick="pärnumaa()" coords="299,281,332,284,344,272,348,277,366,268,386,268,391,283,408,272,429,275,427,295,424,306,399,326,398,337,394,360,412,364,425,374,425,387,416,391,413,398,406,407,400,418,397,428,380,438,368,438,364,444,327,463,328,434,338,418,338,379,348,363,322,346,314,364,307,374,296,380,279,363,252,357,247,342,239,316,269,310,266,295,276,296" shape="poly">
+    <area target="" alt="raplamaa" title="raplamaa" onclick="raplamaa()" coords="357,162,385,160,398,180,418,189,431,208,435,214,434,228,424,239,430,246,422,256,421,272,407,272,391,282,387,268,365,268,349,276,343,272,333,282,300,280,300,271,289,266,299,260,297,250,305,248,293,214,303,206,317,208,325,192,347,188" shape="poly">
+    <area target="" alt="järvamaa" title="järvamaa" onclick="järvamaa()" coords="505,150,516,172,506,198,523,207,533,220,532,237,527,248,513,251,509,265,501,264,489,279,485,283,463,293,445,300,428,295,433,277,419,273,421,256,431,245,424,237,433,229,435,212,443,206,445,191,455,189,455,156" shape="poly">
+    <area target="" alt="lääne-virumaa" title="lääne-virumaa" onclick="l_virumaa()" coords="502,66,508,76,515,69,524,77,548,78,579,88,587,84,602,95,609,119,601,118,596,127,606,131,603,154,612,153,622,166,624,179,609,186,606,208,598,221,570,225,567,235,552,231,532,237,535,219,523,207,506,196,516,169,506,149,500,117,492,89,497,80" shape="poly">
+    <area target="" alt="ida-virumaa" title="ida-virumaa" onclick="i_virumaa()" coords="605,97,622,108,679,111,733,118,749,104,766,125,749,137,757,141,735,151,715,215,686,240,685,251,623,241,613,235,605,239,600,221,610,208,610,184,625,177,624,164,613,155,603,153,608,133,601,128,608,119" shape="poly">
+    <area target="" alt="Jõgevamaa" title="Jõgevamaa" onclick="jõgevamaa()" coords="683,252,678,265,681,277,638,285,633,300,619,293,609,314,594,309,590,318,562,317,532,327,514,311,486,298,489,279,509,263,516,251,530,250,530,236,553,230,560,237,571,226,596,221,604,237,615,236,619,242" shape="poly">
+    <area target="" alt="viljandimaa" title="viljandimaa" onclick="viljandimaa()" coords="425,296,443,301,487,283,483,298,509,311,528,327,533,344,519,365,523,406,507,411,496,403,491,411,477,426,468,427,462,445,433,422,428,435,421,439,417,424,400,423,407,405,425,388,427,374,410,363,393,360,396,340,396,327,422,307" shape="poly">
+    <area target="" alt="Tartumaa" title="Tartumaa" onclick="tartumaa()" coords="532,326,534,345,521,368,522,404,543,408,557,396,565,403,577,399,584,407,590,399,598,395,612,392,616,381,632,384,658,379,661,387,693,393,686,373,695,347,683,280,640,283,633,300,621,294,611,312,592,308,590,319,563,320" shape="poly">
+    <area target="" alt="põlvamaa" title="põlvamaa" onclick="põlvamaa()" coords="579,442,610,449,637,450,642,443,661,455,660,466,677,468,694,474,723,466,712,454,711,437,704,434,706,418,673,376,692,392,659,385,639,378,619,379,611,393,589,400,580,419" shape="poly">
+    <area target="" alt="valgamaa" title="valgamaa" onclick="valgamaa()" coords="465,442,471,426,493,412,496,404,507,408,546,407,561,394,569,402,578,400,583,405,578,443,561,446,555,458,561,473,567,483,567,496,566,511,566,528,544,516,535,494,520,484,519,466,492,464,484,451,469,453" shape="poly">
+    <area target="" alt="võrumaa" title="võrumaa" onclick="võrumaa()" coords="569,533,581,540,596,529,607,528,616,514,632,521,638,532,669,539,669,526,677,522,675,506,689,499,694,474,671,471,660,466,660,454,641,441,639,452,582,442,563,448,560,460,568,484" shape="poly">
+</map>
+        </th>
+        <th id="estmap_text">
+            <h1 id="maakond">Click on the map!</h1>
+            <p id="maakond_info"></p>
+        </th>
+    </tr>
+</table>
+       
+       
+       <div id="amigoOption">
+       <button class="option" id="offer" style="vertical-align:middle" onclick="offer()"><span>Offer a ride</span></button>
+       <button class="option" id="find" style="vertical-align:middle" onclick="find()"><span>Find a ride</span></button>
+           
+           
+<div id="offerfind">
+    
+    
+        <h3 class="select1">Point of origin</h3>
+        <h3 class="select2">End destination</h3>
+               <br><br>
+    <div id="countySelect">
+        <select id="where">
+        <option value="harju">Harjumaa</option>
+        <option value="lääne">Läänemaa</option>
+        <option value="pärnu">Pärnumaa</option>
+        <option value="rapla">Raplamaa</option>
+        <option value="järvamaa">Järvamaa</option>
+        <option value="lääneViru">Lääne-Virumma</option>
+        <option value="idaViru">Ida-Virumaa</option>
+        <option value="jõgeva">Jõgevamaa</option>
+        <option value="viljandi">Viljandimaa</option>
+        <option value="tartu">Tartumaa</option>
+        <option value="põlva">Põlvamaa</option>
+        <option value="valga">Valgamaa</option>
+        <option value="võru">Võrumaa</option>
+    </select>
+        <select id="to">
+        <option value="harju">Harjumaa</option>
+        <option value="lääne">Läänemaa</option>
+        <option value="pärnu">Pärnumaa</option>
+        <option value="rapla">Raplamaa</option>
+        <option value="järvamaa">Järvamaa</option>
+        <option value="lääneViru">Lääne-Virumma</option>
+        <option value="idaViru">Ida-Virumaa</option>
+        <option value="jõgeva">Jõgevamaa</option>
+        <option value="viljandi">Viljandimaa</option>
+        <option value="tartu">Tartumaa</option>
+        <option value="põlva">Põlvamaa</option>
+        <option value="valga">Valgamaa</option>
+        <option value="võru">Võrumaa</option>
+    </select>
+    </div>
+    <br><br><br><br><br><br>
+    <div class="month">      
+  <ul>
+    <li class="prev">&#10094;</li>
+    <li class="next">&#10095;</li>
+    <li>
+      August<br>
+      <span style="font-size:18px">2020</span>
+    </li>
+  </ul>
+</div>
+
+<ul class="weekdays">
+  <li>Mo</li>
+  <li>Tu</li>
+  <li>We</li>
+  <li>Th</li>
+  <li>Fr</li>
+  <li>Sa</li>
+  <li>Su</li>
+</ul>
+
+<ul class="days">  
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+  <li>5</li>
+  <li>6</li>
+  <li>7</li>
+  <li>8</li>
+  <li>9</li>
+  <li><span class="active">10</span></li>
+  <li>11</li>
+  <li>12</li>
+  <li>13</li>
+  <li>14</li>
+  <li>15</li>
+  <li>16</li>
+  <li>17</li>
+  <li>18</li>
+  <li>19</li>
+  <li>20</li>
+  <li>21</li>
+  <li>22</li>
+  <li>23</li>
+  <li>24</li>
+  <li>25</li>
+  <li>26</li>
+  <li>27</li>
+  <li>28</li>
+  <li>29</li>
+  <li>30</li>
+  <li>31</li>
+</ul>
+    <div id="offerdiv">
+        <h3 class="select1">Car Rules</h3>
+        <br><br><br>
+        <table>
+            <tr>
+                <th><input type="checkbox">
+                    <label>Smoking/Vapeing</label></th>
+                <th><input type="checkbox">
+                    <label>Music without headphones</label></th>
+                <th><input type="checkbox">
+                    <label>Babies</label></th>
+            </tr>
+            <tr>
+                <th><input type="checkbox">
+                    <label>Eating/Drinking</label></th>
+                <th><input type="checkbox">
+                    <label>Driving stops</label></th>
+                <th><input type="checkbox">
+                    <label>God?</label></th>
+            </tr>
+        </table>
+    </div>
+    
+    <div id="finddiv">
+        <h3 class="select1">Car Rules</h3>
+        <br><br><br>
+        <table>
+            <tr>
+                <th><input type="checkbox">
+                    <label>Smoking/Vapeing</label></th>
+                <th><input type="checkbox">
+                    <label>Music without headphones</label></th>
+                <th><input type="checkbox">
+                    <label>Babies</label></th>
+            </tr>
+            <tr>
+                <th><input type="checkbox">
+                    <label>Eating/Drinking</label></th>
+                <th><input type="checkbox">
+                    <label>Driving stops</label></th>
+                <th><input type="checkbox">
+                    <label>God?</label></th>
+            </tr>
+        </table>
+	   
+	</div>
+    <div id="reedy">
+		  
+        <button class="ready">Confirm</button>
+    </div>
+</div>
+           <br>
+            </div>
+           
+           
+   <footer>
+      <ul>
+         <li>
+            <img src="footer1.svg">
+         </li>
+         <li>
+            <img src="footer2.svg">
+         </li>
+         <li>
+            <img src="footer3.svg">
+         </li>
+      </ul>
+      <p><strong>© Amigocar OÜ</strong></p>
+
+   </footer>
+
+
+
+</div>
+
+<script type="text/javascript">
+
+    var active = 0;
+    var maakondh1 = document.getElementById("maakond");
+    var info_p = document.getElementById("maakond_info");
+    var findDiv = document.getElementById("finddiv");
+    var offerDiv = document.getElementById("offerdiv");
+    
+      function menuClick() {
+         if (active == 0) {
+            active++;
+            document.getElementById("menu").style.display = "block";
+            document.getElementById("menu").style.right = "-300px";
+            document.getElementById("content").style.right = "300px";
+            document.body.style.overflow = "hidden";
+         } else if (active == 1) {
+            active = 0;
+            document.getElementById("menu").style.display = "none";
+            document.getElementById("content").style.right = "0px";
+            document.body.style.overflow = "visible";
+         }
+      }
+ 
+     function harjumaa() {
+        maakondh1.innerHTML = 'Harjumaa';
+        trips();
+    }
+     function läänemaa() {
+        maakondh1.innerHTML ='Läänemaa';
+          trips();
+    }
+     function pärnumaa() {
+        maakondh1.innerHTML = 'Pärnumaa';
+          trips();
+    }
+     function raplamaa() {
+        maakondh1.innerHTML = 'Raplamaa';
+          trips();
+    }
+     function järvamaa() {
+        maakondh1.innerHTML = 'Järvamaa';
+          trips();
+    }
+     function l_virumaa() {
+        maakondh1.innerHTML = 'Lääne-Virumaa';
+          trips();
+    }
+     function i_virumaa() {
+        maakondh1.innerHTML = 'Ida-Virumaa';
+          trips();
+    }
+     function jõgevamaa() {
+        maakondh1.innerHTML = 'Jõgevamaa';
+          trips();
+    }
+     function viljandimaa() {
+       maakondh1.innerHTML = 'Viljandimaa';
+          trips();
+    } 
+     function tartumaa() {
+       maakondh1.innerHTML = 'Tartumaa';
+          trips();
+    }
+     function põlvamaa() {
+        maakondh1.innerHTML = 'Põlvamaa';
+          trips();
+    }
+     function valgamaa() {
+        maakondh1.innerHTML = 'Valgamaa';
+          trips();
+    }
+     function võrumaa() {
+        maakondh1.innerHTML = 'Võrumaa';
+      trips();
+    }
+
+ function trips(){
+     info_p.innerHTML ="There are " + Math.floor(Math.random()*200) + " trips planned for this county and " + Math.floor(Math.random()*200) + " trips planned from this county";
+ }
+    function offer(){
+        
+        rideplan();
+        findDiv.style.display = "none";
+        offerDiv.style.display = "block";
+    }
+    function find(){
+        rideplan();
+        offerDiv.style.display = "none";
+        findDiv.style.display = "block";
+    }
+    
+    function rideplan() {
+  var hiddendiv = document.getElementById("offerfind");
+  if (hiddendiv.style.display === "none") {
+    hiddendiv.style.display = "block";
+  } else {
+    hiddendiv.style.display = "none";
+  }
+}
+   </script>
+      
+       </body>
+
+
+
+</html>
