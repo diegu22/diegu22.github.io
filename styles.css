@@ -251,9 +251,9 @@ footer p {
 	font:14px Helvetica,Arial,sans-serif;
 }
 #mc-embedded-subscribe {
-	background:#6675FF; 
+	background:#6675FF !important; 
 	cursor:pointer; 
 }
    #mc-embedded-subscribe:hover {
-	background:#3347ff; 
+	background:#3347ff !important; 
 }
