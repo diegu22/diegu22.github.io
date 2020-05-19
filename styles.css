@@ -247,8 +247,8 @@ footer p {
 
 #mc_embed_signup {
 	background:#fff; 
-	clear:left; 
 	font:14px Helvetica,Arial,sans-serif;
+	text-align: center;
 }
 #mc-embedded-subscribe {
 	background:#6675FF !important; 
@@ -256,4 +256,8 @@ footer p {
 }
    #mc-embedded-subscribe:hover {
 	background:#3347ff !important; 
+}
+#thx-sub {
+	text-align: center;
+	display: none;
 }
