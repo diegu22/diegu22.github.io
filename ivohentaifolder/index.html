@@ -202,7 +202,7 @@
 		document.getElementById("cartCount").innerHTML = cart.length;
 	}
 	function priceCount() {
-		document.getElementById("priceCount").innerHTML = totalPrice;
+		document.getElementById("priceCount").innerHTML = totalPrice.toFixed(2);
 		
 		if (document.getElementById("priceCount").innerHTML === "0") {
 			document.getElementById("priceCount").innerHTML = "0.00";
