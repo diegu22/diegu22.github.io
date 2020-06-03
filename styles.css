@@ -12,6 +12,7 @@ header {
 	width: 100%;
 	background: white;
 	top: 0;
+	z-index: 999999999;
 }
 .header-sides {
 	flex: 50%;
