@@ -4,13 +4,14 @@
 	<title>Amigocar</title>
 	<link id="styleslink" rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
     <link rel="shortcut icon" href="bluelogo.png">
     <link href="https://fonts.googleapis.com/css2?family=Biryani&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 </head>
-<body style="background: #6675FF">
+<body style="background: #6675FF" class="signin-body">
 	<header>
 		<div class="header-sides header-left-side">
 			<div class="header-logo">
@@ -45,6 +46,36 @@
 						</a>
 				</ul>
 			</nav>
+
+			<div class="menu-icon" onclick="openMenu()">
+				<div class="menu-container">
+					<div class="line" id="line-1"></div>
+					<div class="line" id="line-2"></div>
+					<div class="line" id="line-3"></div>
+				</div>
+				<div class="phone-nav">
+						<a href="map.html">Plan a ride</a>
+						<hr>
+						<a href="">Safety</a>
+						<hr>
+						<a href="">About</a>
+						<hr>
+						<a href="">Support</a>
+
+						<div class="extras">
+							<hr style="margin-top: 0">
+							<div class="languages">
+								<button>EN</button>
+								<button>EE</button>
+								<button>RU</button>
+							</div>
+							<hr>
+							<button id="login">Log in</button>
+							<hr>
+							<a href="signin.html" class="signup"><button id="signup">Sign up</button></a>
+						</div>
+				</div>
+			</div>
 		</div>
 
 		<div class="header-sides header-right-side">
@@ -109,11 +140,7 @@
 
 
 
-	<script type="text/javascript">
-		function showLanguages () {
-			$("#languages").toggleClass("active");
-			$("#language-dropdown-triangle").toggleClass("active");
-		}
+	<script src="javascript.js">
 	</script>
 </body>
 </html>

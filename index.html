@@ -4,6 +4,7 @@
 	<title>Amigocar</title>
 	<link id="styleslink" rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
     <link rel="shortcut icon" href="bluelogo.png">
     <link href="https://fonts.googleapis.com/css2?family=Biryani&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
@@ -45,6 +46,36 @@
 						</a>
 				</ul>
 			</nav>
+
+			<div class="menu-icon" onclick="openMenu()">
+				<div class="menu-container">
+					<div class="line" id="line-1"></div>
+					<div class="line" id="line-2"></div>
+					<div class="line" id="line-3"></div>
+				</div>
+				<div class="phone-nav">
+						<a href="map.html">Plan a ride</a>
+						<hr>
+						<a href="">Safety</a>
+						<hr>
+						<a href="">About</a>
+						<hr>
+						<a href="">Support</a>
+
+						<div class="extras">
+							<hr style="margin-top: 0">
+							<div class="languages">
+								<button>EN</button>
+								<button>EE</button>
+								<button>RU</button>
+							</div>
+							<hr>
+							<button id="login">Log in</button>
+							<hr>
+							<a href="signin.html" class="signup"><button id="signup">Sign up</button></a>
+						</div>
+				</div>
+			</div>
 		</div>
 
 		<div class="header-sides header-right-side">
@@ -71,7 +102,7 @@
 			<div class="main-block-left"></div>
 			<div class="main-block-right">
 				<div class="main-block-right-container">
-					<h1>Innovative way <br>to travel.</h1>
+					<h1 id="main-block-right-container">Innovative way <br>to travel.</h1>
 					<img src="googleplay.png">
 					<img src="appstore.svg">
 				</div>
@@ -148,7 +179,7 @@
 		 	</div> 
 
 		 	<div class="right-side">
-		 		<p>Follow us on: &nbsp;</p>
+		 		<p id="right-side-follow">Follow us on: &nbsp;</p>
 		 		<a href=""><img src="footer1.svg"></a>
 		 		<a href=""><img src="footer2.svg"></a>
 		 		<a href=""><img src="footer3.svg"></a>
@@ -158,11 +189,7 @@
 
 	</footer>
 
-	<script type="text/javascript">
-		function showLanguages () {
-			$("#languages").toggleClass("active");
-			$("#language-dropdown-triangle").toggleClass("active");
-		}
+	<script src="javascript.js">
 	</script>
 </body>
 </html>
