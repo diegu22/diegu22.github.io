@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+	<title>Amigocar</title>
+	<link id="styleslink" rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="bluelogo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Biryani&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<body style="background: #6675FF; height: calc(100% - 60px);">
+	<header>
+		<div class="header-sides header-left-side">
+			<div class="header-logo">
+				<img src="bluelogo.png">
+				<a href="index.html">Amigocar</a>
+			</div>
+
+			<nav>
+				<ul>
+						<a href="map.html">
+							<li>
+								Plan a ride
+							</li>
+						</a>
+					<div class="nav-line"></div>
+						<a href="">
+							<li>
+								Safety
+							</li>
+						</a>
+					<div class="nav-line"></div>
+						<a href="">
+							<li>
+								About
+							</li>
+						</a>
+					<div class="nav-line"></div>
+						<a href="">
+							<li>
+								Support
+							</li>
+						</a>
+				</ul>
+			</nav>
+
+			<div class="menu-icon" onclick="openMenu()">
+				<div class="menu-container">
+					<div class="line" id="line-1"></div>
+					<div class="line" id="line-2"></div>
+					<div class="line" id="line-3"></div>
+				</div>
+				<div class="phone-nav">
+						<a href="map.html">Plan a ride</a>
+						<hr>
+						<a href="">Safety</a>
+						<hr>
+						<a href="">About</a>
+						<hr>
+						<a href="">Support</a>
+
+						<div class="extras">
+							<hr style="margin-top: 0">
+							<div class="languages">
+								<button>EN</button>
+								<button>EE</button>
+								<button>RU</button>
+							</div>
+							<hr>
+							<button id="login">Log in</button>
+							<hr>
+							<a href="signin.html" class="signup"><button id="signup">Sign up</button></a>
+						</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="header-sides header-right-side">
+
+			<div class="language-dropdown" onclick="showLanguages()">
+					<button>EN</button>
+				<div id="language-dropdown-triangle"></div>
+
+				<div id="languages">
+					<button>EE</button>
+					<button>RU</button>
+				</div>
+
+			</div>
+
+			<button id="login">Log in</button>
+			<a href="signin.html" class="signup"><button id="signup">Sign up</button></a>
+
+		</div>
+
+	</header>
+
+	<content>
+		<div class="map-area">
+			<div class="map-area-content">
+				<div id="map"></div>
+
+				<div class="search-area">
+
+					<label for="wherefrom">Where from?</label>
+					<input type="text" id="wherefrom" placeholder="Address 1">
+
+					<label for="whereto">Where to?</label>
+					<input type="text" id="whereto" placeholder="Address 2">
+					<input type="submit" onclick="callRoute()" class="submit" value="Search">
+
+					<div class="trip-values">
+
+						<span id="distance"></span>
+						<br>
+						<span id="duration"></span>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+
+    <script>
+
+    	var map;
+
+    	var location1;
+    	var location2;
+    	var newLocation;
+
+    	var directionsDisplay;
+    	var directionsService;
+
+    	var geocoder;
+    	var geocoder2;
+
+    	function initMap () {
+      	directionsDisplay = new google.maps.DirectionsRenderer();
+      	directionsService = new google.maps.DirectionsService();
+
+      	location1 = new google.maps.LatLng(59.436962, 24.753574);
+      	location2;
+
+      	var mapOptions = {
+      		zoom: 7,
+      		center: location1
+      	};
+
+        map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+        directionsDisplay.setMap(map);
+        }
+
+        function callRoute () {
+
+        	var input1 = $("#wherefrom").val();
+        	var input2 = $("#whereto").val();
+
+        	var service = new google.maps.DistanceMatrixService();
+
+        	geocoder = new google.maps.Geocoder();
+        	geocoder2 = new google.maps.Geocoder();
+
+        	geocoder.geocode( { address: input1 }, function( results, status ) {
+		        if ( status == "OK" ) {
+		        	location1 = results[0].geometry.location;
+
+		        	geocoder2.geocode( { address: input2 }, function( results, status ) {
+		        		if ( status == google.maps.GeocoderStatus.OK ) {
+		        			location2 = results[0].geometry.location;
+		        			findRoutes();
+
+		        			service.getDistanceMatrix(
+		        			{
+							    origins: [location1],
+							    destinations: [location2],
+							    travelMode: 'DRIVING',
+							    unitSystem: google.maps.UnitSystem.METRIC,
+							    avoidHighways: false,
+							    avoidTolls: false,
+							}, callback);
+
+							function callback(results, status) {
+								if (status == "OK") {
+									console.log(results);
+									console.log(results.rows[0].elements[0].distance.text);
+									console.log(results.rows[0].elements[0].duration.text);
+
+									$("#distance").html("Distance is " + results.rows[0].elements[0].distance.text);
+									$("#duration").html("It will take " + results.rows[0].elements[0].duration.text);
+								}
+							}
+
+		        		} else {
+		        			alert("We were not able to find your address, please try again! Reason: " + status);
+		        		}
+        			});
+
+		        } else {
+		        	alert("We were not able to find your address, please try again! Reason: " + status);
+		        }
+        	});
+        }
+
+        function findRoutes () {
+	        		var request = {
+                        origin: location1,
+                        destination: location2,
+                        travelMode: "DRIVING"
+                    }
+
+                    directionsService.route(request, function(result, status) {
+                        if (status == "OK") {
+                            directionsDisplay.setDirections(result);
+                        }
+                    });	
+	    }
+
+    </script>
+	</content>
+
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBal74lfJL303SGvrPYhOZafYu3VbCkYoQ&callback=initMap"
+    async defer></script>
+
+	<script src="javascript.js">
+	</script>
+</body>
+</html>

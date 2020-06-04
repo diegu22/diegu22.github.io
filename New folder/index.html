@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Amigocar</title>
+	<link id="styleslink" rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="shortcut icon" href="bluelogo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Biryani&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<body>
+	<header>
+		<div class="header-sides header-left-side">
+			<div class="header-logo">
+				<img src="bluelogo.png">
+				<a href="index.html">Amigocar</a>
+			</div>
+
+			<nav>
+				<ul>
+						<a href="map.html">
+							<li>
+								Plan a ride
+							</li>
+						</a>
+					<div class="nav-line"></div>
+						<a href="">
+							<li>
+								Safety
+							</li>
+						</a>
+					<div class="nav-line"></div>
+						<a href="">
+							<li>
+								About
+							</li>
+						</a>
+					<div class="nav-line"></div>
+						<a href="">
+							<li>
+								Support
+							</li>
+						</a>
+				</ul>
+			</nav>
+
+			<div class="menu-icon" onclick="openMenu()">
+				<div class="menu-container">
+					<div class="line" id="line-1"></div>
+					<div class="line" id="line-2"></div>
+					<div class="line" id="line-3"></div>
+				</div>
+				<div class="phone-nav">
+						<a href="map.html">Plan a ride</a>
+						<hr>
+						<a href="">Safety</a>
+						<hr>
+						<a href="">About</a>
+						<hr>
+						<a href="">Support</a>
+
+						<div class="extras">
+							<hr style="margin-top: 0">
+							<div class="languages">
+								<button>EN</button>
+								<button>EE</button>
+								<button>RU</button>
+							</div>
+							<hr>
+							<button id="login">Log in</button>
+							<hr>
+							<a href="signin.html" class="signup"><button id="signup">Sign up</button></a>
+						</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="header-sides header-right-side">
+
+			<div class="language-dropdown" onclick="showLanguages()">
+					<button>EN</button>
+				<div id="language-dropdown-triangle"></div>
+
+				<div id="languages">
+					<button>EE</button>
+					<button>RU</button>
+				</div>
+
+			</div>
+
+			<button id="login">Log in</button>
+			<a href="signin.html" class="signup"><button id="signup">Sign up</button></a>
+
+		</div>
+
+	</header>
+	<content>
+		<div class="main-block">
+			<div class="main-block-left"></div>
+			<div class="main-block-right">
+				<div class="main-block-right-container">
+					<h1 id="main-block-right-container">Innovative way <br>to travel.</h1>
+					<img src="googleplay.png">
+					<img src="appstore.svg">
+				</div>
+			</div>
+				
+		</div>
+
+		<div class="table-block">
+
+			<div class="table-item">
+				<img src="table1.png">
+				<h1>Save money</h1>
+				<p>It is pointless and expensive to drive<br> alone for long distances.</p>
+			</div>
+
+			<div class="table-item">
+				<img src="table2.png">
+				<h1>Comfortable</h1>
+				<p>It is more comfortable, flexible,<br> and personal to travel together.</p>
+			</div>
+
+			<div class="table-item">
+				<img src="table3.png">
+				<h1>Save the environment</h1>
+				<p>Save more fuel by <br>traveling together.</p>
+			</div>
+
+		</div>
+
+	</content>
+
+
+	<footer>
+		 <div class="main-footer">
+
+		 	<div class="logo-area">
+		 		<img src="whitelogo.png">
+		 		<h2>INNOVATIVE WAY<br> TO TRAVEL.</h2>
+		 	</div>
+
+		 	<div class="navigation-area">
+		 		<h2>NAVIGATION</h2>
+		 		<hr>
+		 		<a href="">Driver</a>
+		 		<a href="">Rider</a>
+		 		<a href="map.html">Plan a ride</a>
+		 	</div>
+
+		 	<div class="company-area">
+		 		<h2>COMPANY</h2>
+		 		<hr>
+		 		<a href="">About us</a>
+		 		<a href="">Contact</a>
+		 		<a href="">Privacy Policy</a>
+		 		<a href="">Terms of Service</a>
+		 	</div>
+
+		 	<div class="faq-area">
+		 		<h2>FAQ</h2>
+		 		<hr>
+		 		<a href="">Safety</a>
+		 		<a href="">How to ride</a>
+		 		<a href="">Become a driver</a>
+		 	</div>
+		 </div>
+
+		 <hr>
+
+		 <div class="bottom-footer">
+
+		 	<div class="left-side">
+		 		<p>© 2020 Amigocar OÜ</p>
+		 		<a href="">Legal</a>
+		 	</div> 
+
+		 	<div class="right-side">
+		 		<p id="right-side-follow">Follow us on: &nbsp;</p>
+		 		<a href=""><img src="footer1.svg"></a>
+		 		<a href=""><img src="footer2.svg"></a>
+		 		<a href=""><img src="footer3.svg"></a>
+		 	</div>
+
+		 </div>
+
+	</footer>
+
+	<script src="javascript.js">
+	</script>
+</body>
+</html>
